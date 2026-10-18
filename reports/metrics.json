@@ -1,0 +1,127 @@
+{
+  "project": "Execution Algorithm Suite",
+  "data_notice": "Synthetic schedule comparison; shortfall values are model outputs, not measured execution.",
+  "metrics": {
+    "parent_order_quantity": 100000,
+    "side": "BUY",
+    "arrival_price": 100.0,
+    "algorithms": {
+      "TWAP": {
+        "implementation_shortfall_bps": 6.68,
+        "fill_rate_pct": 100.0,
+        "p95_child_order_latency_ms": 2.8,
+        "average_participation_pct": 8.0
+      },
+      "VWAP": {
+        "implementation_shortfall_bps": 7.51,
+        "fill_rate_pct": 100.0,
+        "p95_child_order_latency_ms": 3.4,
+        "average_participation_pct": 9.1
+      },
+      "POV": {
+        "implementation_shortfall_bps": 4.26,
+        "fill_rate_pct": 95.39,
+        "p95_child_order_latency_ms": 4.1,
+        "average_participation_pct": 10.0
+      }
+    },
+    "simulation_intervals": 20,
+    "market_impact_model": "Illustrative upward-drifting mid-price with deterministic intraday variation."
+  },
+  "chart": {
+    "title": "Cumulative order completion",
+    "x_label": "Execution interval",
+    "y_label": "Parent order filled (%)",
+    "series": [
+      {
+        "name": "TWAP",
+        "values": [
+          5.0,
+          10.0,
+          15.0,
+          20.0,
+          25.0,
+          30.0,
+          35.0,
+          40.0,
+          45.0,
+          50.0,
+          55.0,
+          60.0,
+          65.0,
+          70.0,
+          75.0,
+          80.0,
+          85.0,
+          90.0,
+          95.0,
+          100.0
+        ]
+      },
+      {
+        "name": "VWAP",
+        "values": [
+          1.75,
+          4.47,
+          7.72,
+          11.39,
+          15.39,
+          19.68,
+          24.24,
+          29.03,
+          34.03,
+          39.23,
+          44.62,
+          50.18,
+          55.9,
+          61.78,
+          67.82,
+          73.99,
+          80.3,
+          86.74,
+          93.31,
+          100.0
+        ]
+      },
+      {
+        "name": "POV",
+        "values": [
+          14.26,
+          26.49,
+          36.97,
+          45.96,
+          53.66,
+          60.27,
+          65.94,
+          70.79,
+          74.96,
+          78.53,
+          81.59,
+          84.22,
+          86.47,
+          88.4,
+          90.05,
+          91.47,
+          92.69,
+          93.73,
+          94.62,
+          95.39
+        ]
+      }
+    ]
+  },
+  "flow": [
+    "Parent order",
+    "Schedule planner",
+    "Child orders",
+    "Venue simulator",
+    "TCA report"
+  ],
+  "flow_values": [
+    0.4,
+    1.1,
+    2.8,
+    3.6,
+    0.8
+  ]
+}
